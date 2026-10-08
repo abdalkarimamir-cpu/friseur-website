@@ -1,0 +1,1018 @@
+```html
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>LUXE BARBER | Premium Friseur</title>
+  <meta name="description" content="LUXE BARBER – Premium Haircuts, Beard Styling und mehr. Jetzt Termin buchen.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0b0b0b;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* NAVIGATION */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(10, 10, 10, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: auto;
+      height: 75px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 25px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: 3px;
+    }
+
+    .logo span {
+      color: #c9a45c;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #ddd;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #c9a45c;
+    }
+
+    .menu {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 20px 60px;
+
+      background:
+        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.82)),
+        url("https://images.unsplash.com/photo-1622288432450-277d0fef5ed8?auto=format&fit=crop&w=2000&q=85")
+        center/cover;
+    }
+
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .hero small {
+      color: #c9a45c;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    .hero h1 {
+      font-size: clamp(50px, 9vw, 100px);
+      line-height: 0.95;
+      margin: 20px 0;
+      letter-spacing: -3px;
+    }
+
+    .hero h1 span {
+      color: #c9a45c;
+    }
+
+    .hero p {
+      color: #ccc;
+      font-size: 18px;
+      max-width: 650px;
+      margin: 0 auto 35px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 28px;
+      border-radius: 4px;
+      font-weight: bold;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: #c9a45c;
+      color: #111;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      background: #e0bd75;
+    }
+
+    .btn-outline {
+      border: 1px solid #fff;
+    }
+
+    .btn-outline:hover {
+      background: #fff;
+      color: #111;
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 100px 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 55px;
+    }
+
+    .section-title small {
+      color: #c9a45c;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .section-title h2 {
+      font-size: 45px;
+      margin-top: 10px;
+    }
+
+    /* SERVICES */
+
+    .services {
+      background: #111;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .service {
+      background: #181818;
+      padding: 35px 25px;
+      border: 1px solid #252525;
+      transition: 0.3s;
+    }
+
+    .service:hover {
+      transform: translateY(-8px);
+      border-color: #c9a45c;
+    }
+
+    .service-icon {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    .service h3 {
+      margin-bottom: 10px;
+    }
+
+    .service p {
+      color: #999;
+      margin-bottom: 20px;
+    }
+
+    .price {
+      color: #c9a45c;
+      font-size: 23px;
+      font-weight: bold;
+    }
+
+    /* ABOUT */
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-image {
+      min-height: 500px;
+      background:
+        url("https://images.unsplash.com/photo-1512690459411-b9245aed614b?auto=format&fit=crop&w=1200&q=85")
+        center/cover;
+    }
+
+    .about-text h2 {
+      font-size: 45px;
+      margin-bottom: 20px;
+    }
+
+    .about-text h2 span {
+      color: #c9a45c;
+    }
+
+    .about-text p {
+      color: #aaa;
+      margin-bottom: 20px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .feature {
+      padding: 15px;
+      background: #161616;
+      border-left: 3px solid #c9a45c;
+    }
+
+    /* GALLERY */
+
+    .gallery {
+      background: #111;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .gallery-item {
+      height: 350px;
+      overflow: hidden;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.5s;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.08);
+    }
+
+    /* REVIEWS */
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .review {
+      background: #161616;
+      padding: 30px;
+      border: 1px solid #252525;
+    }
+
+    .stars {
+      color: #c9a45c;
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+
+    .review p {
+      color: #bbb;
+      margin-bottom: 20px;
+    }
+
+    .review strong {
+      color: #fff;
+    }
+
+    /* BOOKING */
+
+    .booking {
+      background:
+        linear-gradient(rgba(0,0,0,.82), rgba(0,0,0,.9)),
+        url("https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=2000&q=85")
+        center/cover;
+    }
+
+    .booking-box {
+      max-width: 700px;
+      margin: auto;
+      background: rgba(20,20,20,.95);
+      padding: 45px;
+      border: 1px solid #333;
+    }
+
+    .booking-form {
+      display: grid;
+      gap: 15px;
+    }
+
+    .booking-form input,
+    .booking-form select,
+    .booking-form textarea {
+      width: 100%;
+      padding: 15px;
+      background: #0d0d0d;
+      border: 1px solid #333;
+      color: white;
+      outline: none;
+    }
+
+    .booking-form input:focus,
+    .booking-form select:focus,
+    .booking-form textarea:focus {
+      border-color: #c9a45c;
+    }
+
+    .booking-form textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      background: #111;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .contact-card {
+      text-align: center;
+      background: #181818;
+      padding: 30px;
+    }
+
+    .contact-card .icon {
+      font-size: 35px;
+      margin-bottom: 15px;
+    }
+
+    .contact-card h3 {
+      margin-bottom: 8px;
+    }
+
+    .contact-card p {
+      color: #aaa;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 40px 20px;
+      background: #070707;
+      text-align: center;
+      border-top: 1px solid #222;
+    }
+
+    footer .logo {
+      margin-bottom: 15px;
+    }
+
+    footer p {
+      color: #777;
+    }
+
+    .social {
+      margin: 20px 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .social a {
+      color: #aaa;
+      transition: .3s;
+    }
+
+    .social a:hover {
+      color: #c9a45c;
+    }
+
+    /* WHATSAPP */
+
+    .whatsapp {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 60px;
+      height: 60px;
+      background: #25D366;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      z-index: 999;
+      box-shadow: 0 5px 20px rgba(0,0,0,.4);
+      transition: .3s;
+    }
+
+    .whatsapp:hover {
+      transform: scale(1.1);
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 850px) {
+
+      .nav-links {
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        background: #0b0b0b;
+        flex-direction: column;
+        text-align: center;
+        padding: 25px;
+        display: none;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu {
+        display: block;
+      }
+
+      .service-grid,
+      .reviews-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about {
+        grid-template-columns: 1fr;
+      }
+
+      .about-image {
+        min-height: 400px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 550px) {
+
+      section {
+        padding: 75px 18px;
+      }
+
+      .hero h1 {
+        font-size: 55px;
+      }
+
+      .section-title h2,
+      .about-text h2 {
+        font-size: 35px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .booking-box {
+        padding: 25px;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+
+    <a href="#" class="logo">
+      LUXE<span>BARBER</span>
+    </a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Startseite</a></li>
+      <li><a href="#services">Leistungen</a></li>
+      <li><a href="#about">Über uns</a></li>
+      <li><a href="#gallery">Galerie</a></li>
+      <li><a href="#booking">Termin</a></li>
+      <li><a href="#contact">Kontakt</a></li>
+    </ul>
+
+    <div class="menu" onclick="toggleMenu()">☰</div>
+
+  </nav>
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+  <div class="hero-content">
+
+    <small>Premium Barber Shop</small>
+
+    <h1>
+      Dein Style.<br>
+      <span>Dein Look.</span>
+    </h1>
+
+    <p>
+      Professionelle Haarschnitte, Bartpflege und Styling
+      in entspannter Atmosphäre.
+    </p>
+
+    <div class="buttons">
+
+      <a href="#booking" class="btn btn-primary">
+        Termin buchen
+      </a>
+
+      <a href="#services" class="btn btn-outline">
+        Leistungen ansehen
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section class="services" id="services">
+
+  <div class="container">
+
+    <div class="section-title">
+      <small>Unsere Leistungen</small>
+      <h2>Was wir anbieten</h2>
+    </div>
+
+    <div class="service-grid">
+
+      <div class="service">
+        <div class="service-icon">✂️</div>
+        <h3>Classic Haircut</h3>
+        <p>Professioneller Haarschnitt inklusive Styling.</p>
+        <div class="price">ab 25 €</div>
+      </div>
+
+      <div class="service">
+        <div class="service-icon">🔥</div>
+        <h3>Skin Fade</h3>
+        <p>Präziser Fade für einen modernen Look.</p>
+        <div class="price">ab 30 €</div>
+      </div>
+
+      <div class="service">
+        <div class="service-icon">🧔</div>
+        <h3>Beard Styling</h3>
+        <p>Konturen, Rasur und professionelle Bartpflege.</p>
+        <div class="price">ab 20 €</div>
+      </div>
+
+      <div class="service">
+        <div class="service-icon">💈</div>
+        <h3>Hair & Beard</h3>
+        <p>Haarschnitt kombiniert mit professioneller Bartpflege.</p>
+        <div class="price">ab 45 €</div>
+      </div>
+
+      <div class="service">
+        <div class="service-icon">👦</div>
+        <h3>Kids Cut</h3>
+        <p>Moderner und kindgerechter Haarschnitt.</p>
+        <div class="price">ab 20 €</div>
+      </div>
+
+      <div class="service">
+        <div class="service-icon">✨</div>
+        <h3>Premium Package</h3>
+        <p>Haircut, Beard, Styling und extra Pflege.</p>
+        <div class="price">ab 60 €</div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+  <div class="container">
+
+    <div class="about">
+
+      <div class="about-image"></div>
+
+      <div class="about-text">
+
+        <small style="color:#c9a45c;letter-spacing:3px;">
+          ÜBER UNS
+        </small>
+
+        <h2>
+          Mehr als nur<br>
+          <span>ein Haarschnitt.</span>
+        </h2>
+
+        <p>
+          Bei LUXE BARBER geht es nicht nur darum,
+          deine Haare zu schneiden. Wir möchten, dass du
+          dich nach jedem Besuch selbstbewusst und frisch fühlst.
+        </p>
+
+        <p>
+          Unser Team arbeitet mit modernen Techniken,
+          hochwertigen Produkten und viel Liebe zum Detail.
+        </p>
+
+        <div class="features">
+
+          <div class="feature">
+            ✓ Professionelle Barber
+          </div>
+
+          <div class="feature">
+            ✓ Hochwertige Produkte
+          </div>
+
+          <div class="feature">
+            ✓ Moderne Techniken
+          </div>
+
+          <div class="feature">
+            ✓ Entspannte Atmosphäre
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- GALLERY -->
+
+<section class="gallery" id="gallery">
+
+  <div class="container">
+
+    <div class="section-title">
+      <small>Unser Style</small>
+      <h2>Galerie</h2>
+    </div>
+
+    <div class="gallery-grid">
+
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=900&q=85">
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=900&q=85">
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=900&q=85">
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=900&q=85">
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1593702295094-aea2b5c6c0a6?auto=format&fit=crop&w=900&q=85">
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1599351431247-f6e4d0b1e8c4?auto=format&fit=crop&w=900&q=85">
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- REVIEWS -->
+
+<section>
+
+  <div class="container">
+
+    <div class="section-title">
+      <small>Kundenstimmen</small>
+      <h2>Was unsere Kunden sagen</h2>
+    </div>
+
+    <div class="reviews-grid">
+
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>
+          "Sehr sauberer Laden und super Haarschnitt.
+          Ich komme definitiv wieder!"
+        </p>
+        <strong>— Marco</strong>
+      </div>
+
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>
+          "Der beste Fade, den ich bisher bekommen habe.
+          Absolute Empfehlung."
+        </p>
+        <strong>— Daniel</strong>
+      </div>
+
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>
+          "Sehr freundliches Team und eine richtig gute
+          Atmosphäre."
+        </p>
+        <strong>— Ahmed</strong>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- BOOKING -->
+
+<section class="booking" id="booking">
+
+  <div class="container">
+
+    <div class="section-title">
+      <small>Online Termin</small>
+      <h2>Termin buchen</h2>
+    </div>
+
+    <div class="booking-box">
+
+      <form class="booking-form" onsubmit="bookAppointment(event)">
+
+        <input
+          type="text"
+          id="name"
+          placeholder="Dein Name"
+          required
+        >
+
+        <input
+          type="tel"
+          id="phone"
+          placeholder="Telefonnummer"
+          required
+        >
+
+        <select id="service" required>
+          <option value="">Leistung auswählen</option>
+          <option>Classic Haircut</option>
+          <option>Skin Fade</option>
+          <option>Beard Styling</option>
+          <option>Hair & Beard</option>
+          <option>Kids Cut</option>
+          <option>Premium Package</option>
+        </select>
+
+        <input
+          type="date"
+          id="date"
+          required
+        >
+
+        <input
+          type="time"
+          id="time"
+          required
+        >
+
+        <textarea
+          id="message"
+          placeholder="Nachricht (optional)"
+        ></textarea>
+
+        <button class="btn btn-primary" type="submit">
+          Termin anfragen
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+  <div class="container">
+
+    <div class="section-title">
+      <small>Kontakt</small>
+      <h2>Besuche uns</h2>
+    </div>
+
+    <div class="contact-grid">
+
+      <div class="contact-card">
+        <div class="icon">📍</div>
+        <h3>Adresse</h3>
+        <p>Musterstraße 25<br>59821 Arnsberg</p>
+      </div>
+
+      <div class="contact-card">
+        <div class="icon">📞</div>
+        <h3>Telefon</h3>
+        <p>+49 151 12345678</p>
+      </div>
+
+      <div class="contact-card">
+        <div class="icon">🕐</div>
+        <h3>Öffnungszeiten</h3>
+        <p>
+          Mo – Sa<br>
+          09:00 – 19:00
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="logo">
+    LUXE<span>BARBER</span>
+  </div>
+
+  <p>Premium Haircuts. Premium Style.</p>
+
+  <div class="social">
+    <a href="#">Instagram</a>
+    <a href="#">TikTok</a>
+    <a href="#">Facebook</a>
+  </div>
+
+  <p>
+    © 2026 LUXE BARBER. Alle Rechte vorbehalten.
+  </p>
+
+</footer>
+
+
+<!-- WHATSAPP -->
+
+<a
+  class="whatsapp"
+  href="https://wa.me/4915112345678"
+  target="_blank"
+  aria-label="WhatsApp"
+>
+  ☎
+</a>
+
+
+<script>
+
+  function toggleMenu() {
+    document
+      .getElementById("navLinks")
+      .classList.toggle("active");
+  }
+
+
+  function bookAppointment(event) {
+
+    event.preventDefault();
+
+    const name =
+      document.getElementById("name").value;
+
+    const phone =
+      document.getElementById("phone").value;
+
+    const service =
+      document.getElementById("service").value;
+
+    const date =
+      document.getElementById("date").value;
+
+    const time =
+      document.getElementById("time").value;
+
+    const message =
+      document.getElementById("message").value;
+
+
+    const barberNumber = "4915112345678";
+
+    const text =
+      `Hallo LUXE BARBER,%0A%0A` +
+      `ich möchte gerne einen Termin buchen.%0A%0A` +
+      `Name: ${name}%0A` +
+      `Telefon: ${phone}%0A` +
+      `Leistung: ${service}%0A` +
+      `Datum: ${date}%0A` +
+      `Uhrzeit: ${time}%0A` +
+      `Nachricht: ${message}`;
+
+
+    window.open(
+      `https://wa.me/${barberNumber}?text=${text}`,
+      "_blank"
+    );
+
+  }
+
+</script>
+
+</body>
+</html>
+```
